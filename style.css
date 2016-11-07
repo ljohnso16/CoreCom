@@ -96,8 +96,8 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.8;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333333;
+  font-family: Arial, sans-serif;
+  color: #5d5d5e;
 }
 
 p.pages,
@@ -166,8 +166,7 @@ a img {
 .site-inner {
   overflow: hidden;
   *zoom: 1;
-  padding-top: 20px;
-  padding-top: 2rem;
+  padding-top: 5px;
 }
 
 /* Containers and Columns */
@@ -320,12 +319,6 @@ a img {
   padding-bottom: 4rem;
 }
 
-.entry,
-.page .post.entry {
-  margin-bottom: 80px;
-  margin-bottom: 8rem;
-}
-
 .single .entry {
   margin-bottom: 48px;
   margin-bottom: 4.8rem;
@@ -335,26 +328,25 @@ a img {
   margin: 0;
 }
 
-.content-sidebar-wrap {
+.site-inner .wrap {
   background-color: #e8ecef;
 }
 
 .entry-content {
   overflow: hidden;
-}
-
-div.home-widget section.widget {
-  width: 33%;
-  float: left;
-}
-
-.home-widget.widget-area {
-  padding-left: 45px;
+  max-width: 875px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .textwidget {
   text-align: center;
   margin: auto 0;
+}
+
+aside#home-top {
+  max-width: 700px;
+  margin: auto;
 }
 
 /* Headings */
@@ -369,7 +361,7 @@ h6,
   line-height: 1.2;
   margin-bottom: 16px;
   margin-bottom: 1.6rem;
-  font-family: Arimo, Varela, sans-serif;
+  font-family: Open Sans, sans-serif;
   font-weight: 700;
 }
 
@@ -466,7 +458,7 @@ header.site-header {
   margin: 4rem 0 0.8rem;
   font-size: 48px;
   font-size: 4.8rem;
-  font-family: Arimo, Varela, sans-serif;
+  font-family: Open Sans, sans-serif;
   font-weight: 700;
 }
 .site-title a {
@@ -526,7 +518,7 @@ div.title-area p.site-title a {
 .genesis-nav-menu {
   clear: both;
   color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   letter-spacing: 1px;
   letter-spacing: 0.1rem;
   line-height: 1.5;
@@ -780,7 +772,7 @@ div.title-area p.site-title a {
   margin-left: 1.6rem;
   padding-left: 20px;
   padding-left: 2rem;
-  color: #333333;
+  color: #5d5d5e;
 }
 
 .entry-categories,
@@ -878,6 +870,10 @@ ul.post-meta {
   display: table;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
+}
+ul.post-meta li {
+  font-size: 1.2em;
 }
 ul.post-meta li span.post-meta-key {
   display: none;
@@ -889,6 +885,7 @@ ul.post-meta:after {
   border-bottom: 3px solid #39719a;
   display: block;
   margin-left: 25%;
+  margin-top: 15px;
 }
 
 .entry-content p {
@@ -958,6 +955,31 @@ blockquote::before {
 .entry-content ol ol,
 .entry-content ul ul {
   margin-bottom: 0;
+}
+
+h4.widget-title.widgettitle {
+  text-align: center;
+  margin: auto;
+}
+
+div#home-middle-01 section#featured-post-2 .widget-wrap article:first-of-type {
+  background-color: pink !important;
+  clear: both;
+  margin-left: 0;
+}
+
+div.widget-wrap article.entry {
+  width: 31.623931623931625%;
+  float: left;
+  margin-left: 2.564102564102564%;
+}
+
+div.entry-content p {
+  text-align: left;
+}
+
+a.more-link {
+  display: block;
 }
 
 /*

@@ -11,6 +11,7 @@ $color-extra: 			#3B3D42 !default;
 //////////////////CORECOM CUSTOM COLLORS///////////
 $corecom-color:			#5D5D5E !default;
 $corecom-blue:			#39719A !default;
+$textColor:             #5D5D5E !default;
 //////////////////////////////////////////////////
 // Light and Dark
 // -------------------------
@@ -19,9 +20,8 @@ $light:                 #fff !default;
 
 // Typography
 // -------------------------
-$textColor:             #333 !default;
-$googleFont:            Arimo, Varela, sans-serif !default; // Can use multiple fonts with a comma. Cabin, Open Sans, etc...
+$googleFont:            Open Sans, sans-serif !default; // Can use multiple fonts with a comma. Cabin, Open Sans, etc...
 $googleFontWeight:      400 !default; // 400 or 700
-$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$sansFontFamily:        Arial, sans-serif !default;
 $serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
 $baseFontFamily:        $sansFontFamily !default;

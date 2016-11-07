@@ -12,7 +12,8 @@
 
 	.site-inner {
 		@include clearfix;
-		@include rem(padding-top, 20px);
+		// @include rem(padding-top, 20px);
+		padding-top: 5px;
 	}
 	
 
@@ -163,7 +164,7 @@
 
 	.entry,
 	.page .post.entry {
-		@include rem(margin-bottom, 80px);
+//		@include rem(margin-bottom, 80px);
 	}
 
 	.single .entry {
@@ -173,21 +174,30 @@
 	.page .entry {
 		margin: 0;
 	}
-	.content-sidebar-wrap{
+	.site-inner .wrap{
 		background-color: #e8ecef;
 	}
 	.entry-content {
-		overflow: hidden;
+	    overflow: hidden;
+	    max-width: 875px;
+	    text-align: center;
+	    margin: 0 auto;
 	}
 
-div.home-widget section.widget {
-    width: 33%;
-    float: left;
-}
-.home-widget.widget-area {
-    padding-left: 45px;
-}
+// div.home-widget section.widget {
+//     width: 360px;
+//     float: left;
+// }
+// .home-widget.widget-area {
+//     padding-left: 5%;
+//     padding-bottom: 125px;
+// }
 .textwidget {
     text-align: center;
     margin: auto 0;
 }
+aside#home-top {
+    max-width: 700px;
+    margin: auto;
+}
+

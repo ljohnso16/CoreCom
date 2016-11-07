@@ -4,8 +4,12 @@ ul.post-meta {
 	display: table;
 	margin-left:auto;
 	margin-right:auto;
-	li span.post-meta-key {
-    display: none;
+	padding-bottom:20px;
+	li{
+		font-size: 1.2em;
+		span.post-meta-key {
+	    display: none;    
+		}
 	}
 }
 ul.post-meta:after {
@@ -13,7 +17,8 @@ ul.post-meta:after {
   width:50%;
   border-bottom: 3px solid $corecom-blue;
   display: block;
-  margin-left:25%; 
+  margin-left:25%;
+  margin-top: 15px; 
 }
 .entry-content p {
 	@include rem(margin-bottom, 26px);
@@ -80,4 +85,25 @@ ul.post-meta:after {
 	.entry-content ul ul {
 		margin-bottom: 0;
 	}
+	h4.widget-title.widgettitle{
+		text-align: center;
+		margin: auto;
+	}
+	div#home-middle-01 section#featured-post-2 .widget-wrap article:first-of-type{
+		background-color:pink !important;
+		clear: both;
+		margin-left: 0;
+	}
+	div.widget-wrap article.entry {
+		width: 31.623931623931625%;
+    	float:left;
+    	margin-left: 2.564102564102564%;
 
+
+	}
+	div.entry-content p {
+    text-align: left;
+	}
+	a.more-link{
+		display: block;
+	}

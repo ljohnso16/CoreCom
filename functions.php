@@ -44,10 +44,10 @@ function gs_theme_setup() {
 	//add_theme_support( 'custom-background' );
 
 	// Enable Custom Header
-add_theme_support( 'genesis-custom-header', array(
-	'width' => 318,
-	'height' => 123
-));
+	add_theme_support( 'genesis-custom-header', array(
+		'width' => 318,
+		'height' => 123
+	));
 
 	// Add support for structural wraps
 	add_theme_support( 'genesis-structural-wraps', array(
@@ -104,39 +104,44 @@ add_theme_support( 'genesis-custom-header', array(
 function gs_register_sidebars() {
 	$sidebars = array(
 		array(
-			'id'			=> 'home-top',
-			'name'			=> __( 'Home Top', 'corecom' ),
-			'description'	=> __( 'This is the top homepage section.', 'corecom' ),
+			'id'			=> 'home-top-1',
+			'name'			=> __( 'Home Top 1', 'corecom' ),
+			'description'	=> __( 'This is the 1st homepage widget section. 3 text widgets displaying linked icon and text', 'corecom' ),
 		),
+		array(
+			'id'			=> 'home-top-2',
+			'name'			=> __( 'Home Top 2', 'corecom' ),
+			'description'	=> __( 'This is the 2nd homepage widget section. 3 text widgets displaying linked icon and text', 'corecom' ),
+		),
+		array(
+			'id'			=> 'home-top-3',
+			'name'			=> __( 'Home Top 3', 'corecom' ),
+			'description'	=> __( 'This is the 3rd homepage widget section. 3 text widgets displaying linked icon and text', 'corecom' ),
+		),				
 		array(
 			'id'			=> 'home-middle-01',
-			'name'			=> __( 'Home Left Middle', 'corecom' ),
-			'description'	=> __( 'This is the homepage left section.', 'corecom' ),
+			'name'			=> __( 'Home Middle', 'corecom' ),
+			'description'	=> __( 'This is the middle homepage area. We will be putting the featured Posts widget for 3 posts with featured image', 'corecom' ),
 		),
 		array(
-			'id'			=> 'home-middle-02',
-			'name'			=> __( 'Home Middle Middle', 'corecom' ),
-			'description'	=> __( 'This is the homepage middle section.', 'corecom' ),
+			'id'			=> 'footer-testimonials',
+			'name'			=> __( 'footer Testimonia l Slider', 'corecom' ),
+			'description'	=> __( 'This is the footer testimonials slidder section.', 'corecom' ),
 		),
 		array(
-			'id'			=> 'home-middle-03',
-			'name'			=> __( 'Home Right Middle', 'corecom' ),
-			'description'	=> __( 'This is the homepage right section.', 'corecom' ),
+			'id'			=> 'footer-contact',
+			'name'			=> __( 'Footer Contact Us', 'corecom' ),
+			'description'	=> __( 'This is the footer section we are going to have a contact page in.', 'corecom' ),
 		),
 		array(
-			'id'			=> 'home-bottom',
-			'name'			=> __( 'Home Bottom', 'corecom' ),
-			'description'	=> __( 'This is the homepage right section.', 'corecom' ),
+			'id'			=> 'footer-bottom-01',
+			'name'			=> __( 'Last Footer Left', 'corecom' ),
+			'description'	=> __( 'Last Footer on left, monochrome logo', 'corecom' ),
 		),
 		array(
-			'id'			=> 'portfolio',
-			'name'			=> __( 'Portfolio', 'corecom' ),
-			'description'	=> __( 'Use featured posts to showcase your portfolio.', 'corecom' ),
-		),
-		array(
-			'id'			=> 'after-post',
-			'name'			=> __( 'After Post', 'corecom' ),
-			'description'	=> __( 'This will show up after every post.', 'corecom' ),
+			'id'			=> 'footer-bottom-02',
+			'name'			=> __( 'Last Footer Right', 'corecom' ),
+			'description'	=> __( 'Last Footer on the right, 2nd Menu, then address, ', 'corecom' ),
 		),
 	);
 	
@@ -170,37 +175,61 @@ function gs_mobile_navigation() {
 }
 
 // Add Widget Area After Post, and homem page
-add_action('genesis_after_entry', 'gs_do_after_entry');
+add_action('genesis_after_entry_content', 'gs_do_after_entry');
 function gs_do_after_entry() {
- 	// if ( is_single() ) {
- 	// genesis_widget_area( 
-  //               'after-post', 
-  //               array(
-  //                       'before' => '<aside id="after-post" class="after-post"><div class="home-widget widget-area">', 
-  //                       'after' => '</div></aside><!-- end #home-left -->',
-  //               ) 
-  //       );
- 	// }
   	if ( is_front_page() ) {
+  		echo '<aside id="home-top" class="home-top">';
   		genesis_widget_area( 
-                'home-top',//name of widget area 
+                'home-top-1',//name of widget area 
                 array(
-                        'before' => '<aside id="home-top" class="home-top"><div class="home-widget widget-area">', 
-                        'after' => '</div></aside><!-- end #home-widget -->',
+                        'before' => '<div class="one-third first home-widget widget-area">', 
+                        'after' => '</div>',
                 ) 
         );
+  		genesis_widget_area( 
+                'home-top-2',//name of widget area 
+                array(
+                        'before' => '<div class="one-third home-widget widget-area">', 
+                        'after' => '</div>',
+                ) 
+        );
+  		genesis_widget_area( 
+                'home-top-3',//name of widget area 
+                array(
+                        'before' => '<div class="one-third home-widget widget-area">', 
+                        'after' => '</div>',
+                ) 
+        );
+        echo '<div class="clearfix"></div></aside>';                
  	}	
  }
-	add_action( 'genesis_before_content', 'cores_header_sliders' );
-	function cores_header_sliders() {
-		if ( function_exists( 'soliloquy' ) ) { 
-			soliloquy( 'home', 'slug' ); 
-		}
+// Add Widget Area after the .entry-content container in all loop blocks.
+add_action('genesis_after_entry', 'corecom_after_entry_content');
+function corecom_after_entry_content() {
+  	
+  		echo '<aside id="home-middle-01" class="home-middle-01">';
+  		genesis_widget_area( 
+                'home-middle-01',//name of widget area 
+                array(
+                        'before' => '<div id="home-middle-01" class="home-middle-01 widget-area">', 
+                        'after' => '</div>',
+                ) 
+        );
+        echo '</aside>';                
+ 		
+ }
+//Adds slider to all pages using slug
+add_action( 'genesis_before_content', 'cores_header_sliders' );
+function cores_header_sliders() {
+	if ( function_exists( 'soliloquy' ) ) { 
+		soliloquy( 'home', 'slug' ); 
 	}
-	add_action( 'genesis_before_entry_content', 'cores_tagline_output');
-	function cores_tagline_output() {
-		
-		if(the_meta()){
-			echo the_meta();
-		}
+}
+//Adds Tagline for title as long as its not empty
+add_action( 'genesis_before_entry_content', 'cores_tagline_output');
+function cores_tagline_output() {
+	
+	if(the_meta()){
+		echo the_meta();
 	}
+}
