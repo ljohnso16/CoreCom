@@ -96,7 +96,7 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.8;
-  font-family: Arial, sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
   color: #5d5d5e;
 }
 
@@ -142,11 +142,11 @@ input[type="submit"] {
 }
 
 a {
-  color: #3e6b85;
+  color: #4b7da2;
   text-decoration: none;
 }
 a:hover {
-  color: #2b4a5d;
+  color: #345771;
 }
 
 a img {
@@ -314,21 +314,19 @@ a img {
 }
 
 /* Entry Content Structure */
-.content {
-  padding-bottom: 40px;
-  padding-bottom: 4rem;
-}
-
-.single .entry {
-  margin-bottom: 48px;
-  margin-bottom: 4.8rem;
+main.content {
+  margin-top: -20px;
 }
 
 .page .entry {
   margin: 0;
 }
 
-.site-inner .wrap {
+header.entry-header p.entry-meta {
+  display: none;
+}
+
+aside.home-top, main.content article.entry {
   background-color: #e8ecef;
 }
 
@@ -344,9 +342,32 @@ a img {
   margin: auto 0;
 }
 
-aside#home-top {
-  max-width: 700px;
+#home-top {
+  max-width: 640px;
   margin: auto;
+}
+
+div.wiget div.content article:last-child {
+  clear: both;
+}
+
+footer.entry-footer p.entry-meta {
+  display: none;
+}
+
+aside#home-middle-01, section#widget-wrangler-sidebar-2, div#home-middle-01 {
+  max-width: 860px;
+  margin: auto;
+}
+
+aside.home-middle-01.clearfix {
+  background-image: url("images/core-globe.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+section#widget-wrangler-sidebar-2 div.widget-wrap div.widget div.content article div p {
+  text-align: left;
 }
 
 /* Headings */
@@ -361,8 +382,8 @@ h6,
   line-height: 1.2;
   margin-bottom: 16px;
   margin-bottom: 1.6rem;
-  font-family: Open Sans, sans-serif;
-  font-weight: 700;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
+  font-weight: 100;
 }
 
 h1,
@@ -383,11 +404,11 @@ h2 {
 
 h2 a,
 h2 a:visited {
-  color: #3b3d42;
+  color: #4b7da2;
 }
 h2 a:hover,
 h2 a:visited:hover {
-  color: #2b4a5d;
+  color: #345771;
 }
 
 h3 {
@@ -404,7 +425,7 @@ h4,
 }
 
 h4.widgettitle a {
-  color: #3e6b85;
+  color: #4b7da2;
 }
 
 h5 {
@@ -458,14 +479,14 @@ header.site-header {
   margin: 4rem 0 0.8rem;
   font-size: 48px;
   font-size: 4.8rem;
-  font-family: Open Sans, sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
   font-weight: 700;
 }
 .site-title a {
-  color: #3b3d42;
+  color: #4b7da2;
 }
 .site-title a:hover {
-  color: #3e6b85;
+  color: #4b7da2;
 }
 
 .header-image .site-title {
@@ -474,7 +495,7 @@ header.site-header {
 
 .site-description {
   line-height: 1.25;
-  color: #3b3d42;
+  color: #4b7da2;
 }
 
 .header-full-width .site-title,
@@ -518,7 +539,7 @@ div.title-area p.site-title a {
 .genesis-nav-menu {
   clear: both;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "source-sans-pro", sans-serif;
   letter-spacing: 1px;
   letter-spacing: 0.1rem;
   line-height: 1.5;
@@ -623,7 +644,7 @@ div.title-area p.site-title a {
 }
 
 .nav-primary .sub-menu a {
-  background-color: #3b3d42;
+  background-color: #4b7da2;
 }
 
 /* Secondary Navigation
@@ -742,6 +763,11 @@ div.title-area p.site-title a {
 
 .portfolio-widgetized .archive-pagination {
   clear: both;
+}
+
+nav#mobile-nav {
+  background: none !important;
+  border: 1px solid !important;
 }
 
 /*
@@ -872,6 +898,9 @@ ul.post-meta {
   margin-right: auto;
   padding-bottom: 20px;
 }
+ul.post-meta li:not(:first-child) {
+  display: none;
+}
 ul.post-meta li {
   font-size: 1.2em;
 }
@@ -958,12 +987,20 @@ blockquote::before {
 }
 
 h4.widget-title.widgettitle {
+  font-size: 18px;
+  font-weight: bold;
   text-align: center;
-  margin: auto;
+  margin: 30px auto 0px;
+  color: #4b7da2;
 }
 
-div#home-middle-01 section#featured-post-2 .widget-wrap article:first-of-type {
-  background-color: pink !important;
+div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textwidget {
+  margin-bottom: 30px;
+  font-style: italic;
+  opacity: 0.5;
+}
+
+div#home-middle-01 section#widget-wrangler-sidebar-2 .widget-wrap article:first-of-type {
   clear: both;
   margin-left: 0;
 }
@@ -972,14 +1009,60 @@ div.widget-wrap article.entry {
   width: 31.623931623931625%;
   float: left;
   margin-left: 2.564102564102564%;
+  background-color: transparent;
 }
 
-div.entry-content p {
-  text-align: left;
+div.widget-wrap article:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  clear: both;
+  height: 0;
 }
 
 a.more-link {
   display: block;
+}
+
+div.textwidget a img {
+  max-width: 75px;
+}
+
+section#widget-wrangler-sidebar-2 .widget-wrap div.widget .content article.entry header.entry-header h2.entry-title a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+section#widget-wrangler-sidebar-2 .widget-wrap div.widget .content article.entry div.entry-content p {
+  font-size: 14px;
+}
+
+div#testimonial-slider {
+  width: 100%;
+  background-image: url("./images/empowered-skyline.jpg");
+  height: 223px;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 28px;
+}
+
+div.contact-slider section.widget {
+  float: left;
+  margin-left: 2.564102564102564%;
+  width: 48.717948717948715%;
+}
+
+div.contact-slider section.widget:first-of-type {
+  clear: both;
+  margin-left: 0;
+}
+
+div.contact-slider section.widget:after {
+  content: ' ';
+  clear: both;
+  margin-left: 0;
 }
 
 /*
@@ -1125,7 +1208,7 @@ button:hover,
 input:hover[type="button"],
 input:hover[type="submit"],
 .btn:hover {
-  background-color: #2b4a5d;
+  background-color: #345771;
 }
 
 /*

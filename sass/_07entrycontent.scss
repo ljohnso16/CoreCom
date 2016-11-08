@@ -5,6 +5,9 @@ ul.post-meta {
 	margin-left:auto;
 	margin-right:auto;
 	padding-bottom:20px;
+	li:not(:first-child){
+		display: none;
+	}
 	li{
 		font-size: 1.2em;
 		span.post-meta-key {
@@ -86,24 +89,79 @@ ul.post-meta:after {
 		margin-bottom: 0;
 	}
 	h4.widget-title.widgettitle{
+		font-size: 18px;
+		font-weight: bold;
 		text-align: center;
-		margin: auto;
+		margin: 30px auto 0px;
+		color:$color-extra
 	}
-	div#home-middle-01 section#featured-post-2 .widget-wrap article:first-of-type{
-		background-color:pink !important;
+div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textwidget {
+    margin-bottom: 30px;
+    font-style: italic;
+    opacity: 0.5;
+}
+	div#home-middle-01 section#widget-wrangler-sidebar-2 .widget-wrap article:first-of-type{
 		clear: both;
 		margin-left: 0;
 	}
+	//stolen from the col classes in Genesis, 
 	div.widget-wrap article.entry {
 		width: 31.623931623931625%;
     	float:left;
     	margin-left: 2.564102564102564%;
-
-
+    	background-color:transparent;
 	}
-	div.entry-content p {
-    text-align: left;
-	}
+	div.widget-wrap article:after{
+   		content: '';
+   		visibility: hidden;
+	    display: block;
+	    font-size: 0;
+	    clear: both;
+	    height: 0;
+    }	
+	//Makes More Link apear on its own link
 	a.more-link{
 		display: block;
 	}
+	//Icons size 
+	div.textwidget a img {
+    max-width: 75px;
+}
+//Featured Posts Heading
+section#widget-wrangler-sidebar-2 .widget-wrap div.widget .content article.entry header.entry-header h2.entry-title a {
+    font-size: 16px;
+    font-weight: bold;
+}
+//Featured Posts Text Content
+section#widget-wrangler-sidebar-2 .widget-wrap div.widget .content article.entry div.entry-content p {
+    font-size: 14px;
+}
+div#testimonial-slider {
+    width: 100%;
+    background-image: url('./images/empowered-skyline.jpg');
+    height: 223px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    font-size:28px;
+}
+
+// section.widget div.widget-wrap div.widget div.content .textwidget {
+//     height: 350px;
+//     width: 350px;
+// }
+div.contact-slider section.widget {
+    float: left;
+    margin-left: 2.564102564102564%;
+    width: 48.717948717948715%;
+
+}
+div.contact-slider section.widget:first-of-type {
+	clear: both;
+	margin-left: 0;
+}
+div.contact-slider section.widget:after {
+	content: ' ';
+	clear: both;
+	margin-left: 0;
+}

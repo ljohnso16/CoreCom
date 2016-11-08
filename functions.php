@@ -14,6 +14,19 @@
 
 // Initialize Sandbox ** DON'T REMOVE **
 require_once( get_stylesheet_directory() . '/lib/init.php');
+//require_once( get_stylesheet_directory() . '/lib/plugins/corecomemap.php');
+
+add_action( 'wp_enqueue_scripts', 'corecom_add_scripts' );
+function corecom_add_scripts() {
+
+	wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ) );
+	wp_enqueue_script('scripts');
+}
+add_action( 'genesis_meta', 'corecom_typekit_default_embed' );
+function corecom_typekit_default_embed() {
+	echo '<script src="https://use.typekit.net/hrb7zbn.js"></script>';
+	echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
+}
 
 add_action( 'genesis_setup', 'gs_theme_setup', 15 );
 
@@ -39,9 +52,6 @@ function gs_theme_setup() {
 	
 	//Custom Image Sizes
 	add_image_size( 'featured-image', 225, 160, TRUE );
-	
-	// Enable Custom Background
-	//add_theme_support( 'custom-background' );
 
 	// Enable Custom Header
 	add_theme_support( 'genesis-custom-header', array(
@@ -124,13 +134,13 @@ function gs_register_sidebars() {
 			'description'	=> __( 'This is the middle homepage area. We will be putting the featured Posts widget for 3 posts with featured image', 'corecom' ),
 		),
 		array(
-			'id'			=> 'footer-testimonials',
-			'name'			=> __( 'footer Testimonia l Slider', 'corecom' ),
+			'id'			=> 'testimonials',
+			'name'			=> __( 'Testimonia l Slider', 'corecom' ),
 			'description'	=> __( 'This is the footer testimonials slidder section.', 'corecom' ),
 		),
 		array(
-			'id'			=> 'footer-contact',
-			'name'			=> __( 'Footer Contact Us', 'corecom' ),
+			'id'			=> 'contact',
+			'name'			=> __( 'Contact Us', 'corecom' ),
 			'description'	=> __( 'This is the footer section we are going to have a contact page in.', 'corecom' ),
 		),
 		array(
@@ -175,49 +185,56 @@ function gs_mobile_navigation() {
 }
 
 // Add Widget Area After Post, and homem page
-add_action('genesis_after_entry_content', 'gs_do_after_entry');
+add_action('genesis_after_content', 'gs_do_after_entry');
 function gs_do_after_entry() {
-  	if ( is_front_page() ) {
-  		echo '<aside id="home-top" class="home-top">';
+
   		genesis_widget_area( 
-                'home-top-1',//name of widget area 
+                'home-top-1',//Icon Space 1 
                 array(
-                        'before' => '<div class="one-third first home-widget widget-area">', 
+                        'before' => '<aside class="home-top"><div id="home-top"><div class="one-third first home-widget widget-area">', 
                         'after' => '</div>',
                 ) 
         );
   		genesis_widget_area( 
-                'home-top-2',//name of widget area 
-                array(
-                        'before' => '<div class="one-third home-widget widget-area">', 
-                        'after' => '</div>',
-                ) 
-        );
-  		genesis_widget_area( 
-                'home-top-3',//name of widget area 
+                'home-top-2',//Icon Space 2
                 array(
                         'before' => '<div class="one-third home-widget widget-area">', 
                         'after' => '</div>',
                 ) 
         );
-        echo '<div class="clearfix"></div></aside>';                
- 	}	
- }
-// Add Widget Area after the .entry-content container in all loop blocks.
-add_action('genesis_after_entry', 'corecom_after_entry_content');
-function corecom_after_entry_content() {
-  	
-  		echo '<aside id="home-middle-01" class="home-middle-01">';
   		genesis_widget_area( 
-                'home-middle-01',//name of widget area 
+                'home-top-3',//Icon Space 3 
                 array(
-                        'before' => '<div id="home-middle-01" class="home-middle-01 widget-area">', 
-                        'after' => '</div>',
+                        'before' => '<div class="one-third home-widget widget-area">', 
+                        'after' => '</div><div class="clearfix"></div></div></aside>',
                 ) 
         );
-        echo '</aside>';                
- 		
+
+  		genesis_widget_area( 
+                'home-middle-01',////////////featured posts
+                array(
+                        'before' => '<aside  class="home-middle-01 clearfix"><div id="home-middle-01"><div id="home-middle-001" class="home-middle-01 widget-area">', 
+                        'after' => '</div></div></aside>',
+                ) 
+        );
+  		genesis_widget_area( 
+                'testimonials',////////////testimonials
+                array(
+                        'before' => '<aside  class="testimonial-slider clearfix"><div id="testimonial-slider"><div class="testimonial-slider widget-area">', 
+                        'after' => '</div></div></aside>',
+                ) 
+        );
+  		genesis_widget_area( 
+                'contact',////////////testimonials
+                array(
+                        'before' => '<aside  class="contact-slider clearfix"><div id="contact-slider"><div class="contact-slider widget-area">', 
+                        'after' => '</div></div></aside>',
+                ) 
+        );                              
+                              
+
  }
+
 //Adds slider to all pages using slug
 add_action( 'genesis_before_content', 'cores_header_sliders' );
 function cores_header_sliders() {

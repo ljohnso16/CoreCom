@@ -6,12 +6,15 @@
 $color-base: 			#E5EBE6 !default;
 $color-primary: 		#5B8D96 !default;
 $color-secondary: 		#C45A3F !default;
-$color-cta: 			#3E6B85 !default;
-$color-extra: 			#3B3D42 !default;
+$color-cta: 			#4B7DA2 !default;
+$color-extra: 			#4B7DA2 !default;
 //////////////////CORECOM CUSTOM COLLORS///////////
 $corecom-color:			#5D5D5E !default;
 $corecom-blue:			#39719A !default;
 $textColor:             #5D5D5E !default;
+///////////////////////Corecom font family////////
+$source:			"source-sans-pro",sans-serif !default;
+$tisa:			"ff-tisa-sans-web-pro",sans-serif !default;
 //////////////////////////////////////////////////
 // Light and Dark
 // -------------------------
@@ -20,8 +23,10 @@ $light:                 #fff !default;
 
 // Typography
 // -------------------------
-$googleFont:            Open Sans, sans-serif !default; // Can use multiple fonts with a comma. Cabin, Open Sans, etc...
+$googleFont:            $tisa !default; // Page Title,
+$sansFontFamily:        $tisa !default;//most of the font on the site
+$serifFontFamily:       $tisa !default;
+
+$baseFontFamily:        $tisa !default;//header menu,metatext,content,widget text,featured posts text,footer
+
 $googleFontWeight:      400 !default; // 400 or 700
-$sansFontFamily:        Arial, sans-serif !default;
-$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
-$baseFontFamily:        $sansFontFamily !default;
