@@ -1042,7 +1042,6 @@ section.widget .widget-wrap div.widget .content article.entry div.entry-content 
 div#testimonial-slider {
   width: 100%;
   background-image: url("./images/empowered-skyline.jpg");
-  height: 223px;
   text-align: center;
   vertical-align: middle;
   color: #fff;
@@ -1180,6 +1179,37 @@ div#contact-caption-btn a, div#contact-caption-btn a:visited, div#contact-captio
   border: 3px solid #fff;
   color: white;
   font-weight: bold;
+}
+
+.testimonial-slider.widget-area section.widget {
+  height: 223px;
+}
+
+div.testimonial-slider .soliloquy-caption-inside {
+  background-color: transparent !important;
+}
+div.testimonial-slider img.soliloquy-image {
+  display: none;
+}
+div.testimonial-slider ul.soliloquy-slider {
+  min-height: 223px;
+}
+div.testimonial-slider li.soliloquy-item {
+  background-image: url("./images/testimonial-slider-icon.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+div.testimonial-slider .soliloquy-container .soliloquy-caption p, div.testimonial-slider h1#caption-title {
+  color: #fff;
+  position: relative;
+  top: -2em;
+}
+div.testimonial-slider h2.soliloquy-fc-title {
+  margin: 0px !important;
+  font-size: 0.75em !important;
+}
+div.testimonial-slider ul.soliloquy-slider li.soliloquy-item.soliloquy-image-slide {
+  min-height: 223px;
 }
 
 /*
