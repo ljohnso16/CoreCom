@@ -14,6 +14,7 @@
 
 // Initialize Sandbox ** DON'T REMOVE **
 require_once( get_stylesheet_directory() . '/lib/init.php');
+//Plugin that enables the Metafield for Tagline
 require_once( get_stylesheet_directory() . '/lib/plugins/corecomtagline.php');
 
 add_action( 'wp_enqueue_scripts', 'corecom_add_scripts' );

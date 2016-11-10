@@ -26,12 +26,9 @@ function corecom_meta_callback( $post ) {
     wp_nonce_field( basename( __FILE__ ), 'corecom_nonce' );
     $corecom_stored_meta = get_post_meta( $post->ID );
     ?>
- 
-    <p>
-        <label for="meta-text" class="corecom-row-title"><?php _e( 'Tagline: ', 'corecom' )?></label>
-        <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $corecom_stored_meta['meta-text'] ) ) echo $corecom_stored_meta['meta-text'][0]; ?>" />
-    </p>
- 
+    <div>
+        <input spellcheck="true" type="text" name="meta-text" size="60" id="meta-text" value="<?php if ( isset ( $corecom_stored_meta['meta-text'] ) ) echo $corecom_stored_meta['meta-text'][0]; ?>" />   
+    </div>
     <?php
 }
 /**
