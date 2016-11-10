@@ -1119,7 +1119,7 @@ div.corecom-gform_wrapper :after {
 }
 
 .soliloquy-container .soliloquy-caption {
-  bottom: 25%;
+  bottom: 20%;
   left: 0;
   margin: 0;
   padding: 0;
@@ -1130,6 +1130,7 @@ div.corecom-gform_wrapper :after {
 
 .soliloquy-container {
   max-width: none !important;
+  margin-top: 20%;
 }
 
 .soliloquy-container .soliloquy .soliloquy-slides img {
@@ -1141,7 +1142,7 @@ div.corecom-gform_wrapper :after {
 }
 
 div#contact-caption-head {
-  bottom: 25%;
+  bottom: 20%;
   left: 0;
   margin: 0;
   padding: 0;
@@ -1155,7 +1156,7 @@ div#contact-caption-head {
 }
 
 div#soliloquy-caption-inside {
-  max-width: 550px;
+  max-width: 410px;
   margin-left: auto;
   margin-right: auto;
   background: rgba(255, 255, 255, 0.7);
@@ -1163,19 +1164,19 @@ div#soliloquy-caption-inside {
 }
 div#soliloquy-caption-inside h1#caption-title {
   font-size: 2em !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 7px !important;
 }
 div#soliloquy-caption-inside p {
-  padding-bottom: 15px !important;
+  padding-bottom: 7px !important;
 }
 
 div#contact-caption-btn {
-  padding-top: 50px;
+  padding-top: 15px;
 }
 div#contact-caption-btn a, div#contact-caption-btn a:visited, div#contact-caption-btn a:hover {
   background-color: #a8b6bf;
   opacity: 0.7;
-  padding: 15px;
+  padding: 3px;
   border: 3px solid #fff;
   color: white;
   font-weight: bold;

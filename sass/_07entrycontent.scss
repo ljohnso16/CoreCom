@@ -160,26 +160,6 @@ div#testimonial-slider {
 div.map-text p:nth-child(2){
     opacity: 0.65;
 }
-
-// section.widget div.widget-wrap div.widget div.content .textwidget {
-//     height: 350px;
-//     width: 350px;
-// }
-// div.contact-slider section.widget {
-//     float: left;
-//     margin-left: 2.564102564102564%;
-//     width: 48.717948717948715%;
-
-// }
-// div.contact-slider section.widget:first-of-type {
-// 	clear: both;
-// 	margin-left: 0;
-// }
-// div.contact-slider section.widget:after {
-// 	content: ' ';
-// 	clear: both;
-// 	margin-left: 0;
-// }
 .gform_wrapper .top_label .gfield_label, .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label, .gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container label, .gform_wrapper .top_label .gfield_label{
 	display: none !important;
 }
@@ -235,7 +215,7 @@ div.corecom-gform_wrapper {
     width: 500px;
 }
 .soliloquy-container .soliloquy-caption {
-    bottom: 25%;
+    bottom: 20%;
     left: 0;
     margin: 0;
     padding: 0;
@@ -245,6 +225,8 @@ div.corecom-gform_wrapper {
 }
 .soliloquy-container {
 	max-width: none !important;
+    margin-top: 20%;
+
 }
 
 .soliloquy-container .soliloquy .soliloquy-slides img {
@@ -257,7 +239,7 @@ div.corecom-gform_wrapper {
 
 }
 div#contact-caption-head{
-	bottom: 25%	;
+	bottom: 20%	;
     left: 0;
     margin: 0;
     padding: 0;
@@ -269,29 +251,31 @@ div#contact-caption-head{
     padding: 0px !important;
 }
 div#soliloquy-caption-inside{
-	    max-width: 550px;
+	    max-width: 410px;
 	    margin-left: auto;
 	    margin-right: auto;
 	    background: rgba(255,255,255, 0.7);
 	    border:3px solid #fff;
 	h1#caption-title{
 		font-size: 2em !important;
-		margin-bottom: 15px !important;
+		margin-bottom: 7px !important;
 
 	}
 	p{
-		padding-bottom: 15px !important;
+		padding-bottom: 7px !important;
 	}
 }
 	div#contact-caption-btn{
-		padding-top:50px;
+		padding-top: 15px;
+
 		a,a:visited,a:hover{
 		    background-color: #a8b6bf;
 		    opacity: 0.7;
-		    padding: 15px;
+		    padding: 3px;
 		    border: 3px solid #fff;
 		    color: white;
 		    font-weight: bold;
 
 		}
 	}
+	
