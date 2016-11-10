@@ -1,4 +1,4 @@
-ul.post-meta {
+ul.post-meta,div#the-tagline {
 	list-style-type: none;
 	text-align:center;
 	display: table;
@@ -15,7 +15,7 @@ ul.post-meta {
 		}
 	}
 }
-ul.post-meta:after {
+ul.post-meta:after,div#the-tagline:after {
   content:''; 
   width:50%;
   border-bottom: 3px solid $corecom-blue;

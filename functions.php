@@ -221,17 +221,17 @@ add_action( 'genesis_before_content', 'cores_header_sliders' );
 function cores_header_sliders() {
 	if ( function_exists( 'soliloquy' ) ) { 
 		soliloquy( 'home', 'slug' );
-		echo '
-	<div class="soliloquy-contact-caption-wrap">
-    	<div id="contact-caption-head">
-	    	<h1 class="soliloquy-ccb-caption">Core Commercial Brokerage</h1>
-	    	<p>For all your commercial real estate</p>
-	    </div>
-    	<div id="contact-caption-btn">
-    		<a class="soliloquy-button" href="'.site_url('/contact/').'" title="Contact us Today">Contact Us Today</a>
-    	</div>
-	</div><div class="clearfix"></div>
-	'; 
+	// 	echo '
+	// <div class="soliloquy-contact-caption-wrap">
+ //    	<div id="contact-caption-head">
+	//     	<h1 class="soliloquy-ccb-caption">Core Commercial Brokerage</h1>
+	//     	<p>For all your commercial real estate</p>
+	//     </div>
+ //    	<div id="contact-caption-btn">
+ //    		<a class="soliloquy-button" href="'.site_url('/contact/').'" title="Contact us Today">Contact Us Today</a>
+ //    	</div>
+	// </div><div class="clearfix"></div>
+	// '; 
 	}
 }
 //Adds Tagline for title as long as its not empty
@@ -239,11 +239,12 @@ add_action( 'genesis_before_entry_content', 'cores_tagline_output');
 function cores_tagline_output() {
 	
 	// Retrieves the stored value from the database
-    $meta_value = get_post_meta( get_the_ID(), 'meta-text', true );
+    $meta_value = get_post_meta( get_the_ID(), 'tagline-text', true );//targets our meta based on key
  
     // Checks and displays the retrieved value
     if( !empty( $meta_value ) ) {
-        echo $meta_value;
+        echo '<div id="the-tagline">'.$meta_value.'</div>';
+		//echo the_meta();//this gets all the meta in an <ul>
     }
  
 }

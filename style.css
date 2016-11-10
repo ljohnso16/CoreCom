@@ -891,7 +891,7 @@ nav#mobile-nav {
 /*
 06 Post Content Styles
 ---------------------------------------------------------------------------------------------------- */
-ul.post-meta {
+ul.post-meta, div#the-tagline {
   list-style-type: none;
   text-align: center;
   display: table;
@@ -899,17 +899,17 @@ ul.post-meta {
   margin-right: auto;
   padding-bottom: 20px;
 }
-ul.post-meta li:not(:first-child) {
+ul.post-meta li:not(:first-child), div#the-tagline li:not(:first-child) {
   display: none;
 }
-ul.post-meta li {
+ul.post-meta li, div#the-tagline li {
   font-size: 1.2em;
 }
-ul.post-meta li span.post-meta-key {
+ul.post-meta li span.post-meta-key, div#the-tagline li span.post-meta-key {
   display: none;
 }
 
-ul.post-meta:after {
+ul.post-meta:after, div#the-tagline:after {
   content: '';
   width: 50%;
   border-bottom: 3px solid #39719a;

@@ -27,7 +27,7 @@ function corecom_meta_callback( $post ) {
     $corecom_stored_meta = get_post_meta( $post->ID );
     ?>
     <div>
-        <input spellcheck="true" type="text" name="meta-text" size="60" id="meta-text" value="<?php if ( isset ( $corecom_stored_meta['meta-text'] ) ) echo $corecom_stored_meta['meta-text'][0]; ?>" />   
+        <input spellcheck="true" type="text" name="tagline-text" size="60" id="tagline-text" value="<?php if ( isset ( $corecom_stored_meta['tagline-text'] ) ) echo $corecom_stored_meta['tagline-text'][0]; ?>" />   
     </div>
     <?php
 }
@@ -47,8 +47,8 @@ function corecom_meta_save( $post_id ) {
     }
  
     // Checks for input and sanitizes/saves if needed
-    if( isset( $_POST[ 'meta-text' ] ) ) {
-        update_post_meta( $post_id, 'meta-text', sanitize_text_field( $_POST[ 'meta-text' ] ) );
+    if( isset( $_POST[ 'tagline-text' ] ) ) {
+        update_post_meta( $post_id, 'tagline-text', sanitize_text_field( $_POST[ 'tagline-text' ] ) );
     }
  
 }
