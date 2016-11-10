@@ -88,7 +88,7 @@ ul.post-meta:after {
 	.entry-content ul ul {
 		margin-bottom: 0;
 	}
-	h4.widget-title.widgettitle{
+	h4.widget-title.widgettitle,#contact-slider p.title{
 		font-size: 18px;
 		font-weight: bold;
 		text-align: center;
@@ -100,7 +100,7 @@ div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textw
     font-style: italic;
     opacity: 0.5;
 }
-	div#home-middle-01 section#widget-wrangler-sidebar-2 .widget-wrap article:first-of-type{
+	div#home-middle-01 section.widget .widget-wrap article:first-of-type{
 		clear: both;
 		margin-left: 0;
 	}
@@ -128,12 +128,12 @@ div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textw
     max-width: 75px;
 }
 //Featured Posts Heading
-section#widget-wrangler-sidebar-2 .widget-wrap div.widget .content article.entry header.entry-header h2.entry-title a {
+section.widget .widget-wrap div.widget .content article.entry header.entry-header h2.entry-title a {
     font-size: 16px;
     font-weight: bold;
 }
 //Featured Posts Text Content
-section#widget-wrangler-sidebar-2 .widget-wrap div.widget .content article.entry div.entry-content p {
+section.widget .widget-wrap div.widget .content article.entry div.entry-content p {
     font-size: 14px;
 }
 div#testimonial-slider {
@@ -145,23 +145,153 @@ div#testimonial-slider {
     color: #fff;
     font-size:28px;
 }
+#contact-slider {		
+	.map-text{
+	    margin: auto;
+	    position: relative;
+	    left: 100px;
+}
+	p{
+		text-align:left !important;
+		white-space: nowrap;
+	}
+
+}
+div.map-text p:nth-child(2){
+    opacity: 0.65;
+}
 
 // section.widget div.widget-wrap div.widget div.content .textwidget {
 //     height: 350px;
 //     width: 350px;
 // }
-div.contact-slider section.widget {
-    float: left;
-    margin-left: 2.564102564102564%;
-    width: 48.717948717948715%;
+// div.contact-slider section.widget {
+//     float: left;
+//     margin-left: 2.564102564102564%;
+//     width: 48.717948717948715%;
+
+// }
+// div.contact-slider section.widget:first-of-type {
+// 	clear: both;
+// 	margin-left: 0;
+// }
+// div.contact-slider section.widget:after {
+// 	content: ' ';
+// 	clear: both;
+// 	margin-left: 0;
+// }
+.gform_wrapper .top_label .gfield_label, .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label, .gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container label, .gform_wrapper .top_label .gfield_label{
+	display: none !important;
+}
+.gform_wrapper{ 
+	input,textarea,select{
+		color:#fff !important;
+		background-color:$corecom-grey !important;
+	}
+	input::-webkit-input-placeholder,textarea::-webkit-input-placeholder,select::-webkit-input-placeholder{
+		color:#fff !important;
+		background-color:$corecom-grey !important;
+	}
+}
+div.corecom-gform_wrapper {
+    width: 400px;
+    float:right;
+    :after{
+    	content:' ';
+    	clear:both;
+    }
+}
+.ginput_container input {
+    width: 100% !important;
+}
+.gform_wrapper .gform_footer{
 
 }
-div.contact-slider section.widget:first-of-type {
-	clear: both;
-	margin-left: 0;
+#google-maps-canvas{
+		max-width:none!important;
+		background:none!important;
+		font-size: inherit;
+		width: 350px;
+		height: 350px;
+		margin:auto;
+	}
+.soliloquy-contact-caption-wrap {
+	div#contact-caption-btn{
+		margin-top: 15px;
+		a.soliloquy-button{
+			background-color: $corecom-grey;
+			opacity: 0.85;
+			padding: 5px;
+			border:3px solid #fff;
+			color:#fff;
+			font-weight:bold;
+		}
+	}
+	#contact-caption-head{
+		border:3px solid #fff;
+		background-color:rgba(255, 255, 255, 0.85);
+	}
+    text-align: center;
+    width: 500px;
 }
-div.contact-slider section.widget:after {
-	content: ' ';
-	clear: both;
-	margin-left: 0;
+.soliloquy-container .soliloquy-caption {
+    bottom: 25%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    zoom: 1;
 }
+.soliloquy-container {
+	max-width: none !important;
+}
+
+.soliloquy-container .soliloquy .soliloquy-slides img {
+	width: 100%;
+}
+
+
+.soliloquy-container .soliloquy-caption p,h1#caption-title {
+	color: $textColor;
+
+}
+div#contact-caption-head{
+	bottom: 25%	;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    zoom: 1;
+}
+.soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
+    padding: 0px !important;
+}
+div#soliloquy-caption-inside{
+	    max-width: 550px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    background: rgba(255,255,255, 0.7);
+	    border:3px solid #fff;
+	h1#caption-title{
+		font-size: 2em !important;
+		margin-bottom: 15px !important;
+
+	}
+	p{
+		padding-bottom: 15px !important;
+	}
+}
+	div#contact-caption-btn{
+		padding-top:50px;
+		a,a:visited,a:hover{
+		    background-color: #a8b6bf;
+		    opacity: 0.7;
+		    padding: 15px;
+		    border: 3px solid #fff;
+		    color: white;
+		    font-weight: bold;
+
+		}
+	}

@@ -14,7 +14,7 @@
 
 // Initialize Sandbox ** DON'T REMOVE **
 require_once( get_stylesheet_directory() . '/lib/init.php');
-//require_once( get_stylesheet_directory() . '/lib/plugins/corecomemap.php');
+require_once( get_stylesheet_directory() . '/lib/plugins/corecomtagline.php');
 
 add_action( 'wp_enqueue_scripts', 'corecom_add_scripts' );
 function corecom_add_scripts() {
@@ -51,31 +51,20 @@ function gs_theme_setup() {
 	$content_width = apply_filters( 'content_width', 600, 430, 920 );
 	
 	//Custom Image Sizes
-	add_image_size( 'featured-image', 225, 160, TRUE );
+	add_image_size( 'featured-image', 225, 160, 480, TRUE );
 
 	// Enable Custom Header
 	add_theme_support( 'genesis-custom-header', array(
 		'width' => 318,
 		'height' => 123
 	));
-
 	// Add support for structural wraps
 	add_theme_support( 'genesis-structural-wraps', array(
 		'header',
 		'nav',
 		'subnav',
-		'inner',
-		'footer-widgets',
-		'footer'
+		'inner'
 	) );
-
-	/**
-	 * 07 Footer Widgets
-	 * Add support for 3-column footer widgets
-	 * Change 3 for support of up to 6 footer widgets (automatically styled for layout)
-	 */
-	add_theme_support( 'genesis-footer-widgets', 3 );
-
 	/**
 	 * 08 Genesis Menus
 	 * Genesis Sandbox comes with 4 navigation systems built-in ready.
@@ -85,29 +74,20 @@ function gs_theme_setup() {
 		'genesis-menus', 
 		array(
 			'primary'   => __( 'Primary Navigation Menu', 'corecom' ), 
-			'secondary' => __( 'Secondary Navigation Menu', 'corecom' ),
-			'footer'    => __( 'Footer Navigation Menu', 'corecom' ),
+			'secondary' => __( 'Secondary Navigation Menu, in footer', 'corecom' ),
 			'mobile'    => __( 'Mobile Navigation Menu', 'corecom' ),
 		)
 	);
-	
+
+	//Removes Secondary Menu from Defualt location, we are using it for Footer now
+	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 	// Add Mobile Navigation
 	add_action( 'genesis_before', 'gs_mobile_navigation', 5 );
-	
 	//Enqueue Sandbox Scripts
-	add_action( 'wp_enqueue_scripts', 'gs_enqueue_scripts' );
-	
-	/**
-	 * 13 Editor Styles
-	 * Takes a stylesheet string or an array of stylesheets.
-	 * Default: editor-style.css 
-	 */
-	//add_editor_style();
-	
-	
+	add_action( 'wp_enqueue_scripts', 'gs_enqueue_scripts' );	
 	// Register Sidebars
 	gs_register_sidebars();
-	
+
 } // End of Set Up Function
 
 // Register Sidebars
@@ -145,12 +125,12 @@ function gs_register_sidebars() {
 		),
 		array(
 			'id'			=> 'footer-bottom-01',
-			'name'			=> __( 'Last Footer Left', 'corecom' ),
+			'name'			=> __( 'Footer Left', 'corecom' ),
 			'description'	=> __( 'Last Footer on left, monochrome logo', 'corecom' ),
 		),
 		array(
 			'id'			=> 'footer-bottom-02',
-			'name'			=> __( 'Last Footer Right', 'corecom' ),
+			'name'			=> __( 'Footer Right', 'corecom' ),
 			'description'	=> __( 'Last Footer on the right, 2nd Menu, then address, ', 'corecom' ),
 		),
 	);
@@ -239,14 +219,58 @@ function gs_do_after_entry() {
 add_action( 'genesis_before_content', 'cores_header_sliders' );
 function cores_header_sliders() {
 	if ( function_exists( 'soliloquy' ) ) { 
-		soliloquy( 'home', 'slug' ); 
+		soliloquy( 'home', 'slug' );
+		echo '
+	<div class="soliloquy-contact-caption-wrap">
+    	<div id="contact-caption-head">
+	    	<h1 class="soliloquy-ccb-caption">Core Commercial Brokerage</h1>
+	    	<p>For all your commercial real estate</p>
+	    </div>
+    	<div id="contact-caption-btn">
+    		<a class="soliloquy-button" href="'.site_url('/contact/').'" title="Contact us Today">Contact Us Today</a>
+    	</div>
+	</div><div class="clearfix"></div>
+	'; 
 	}
 }
 //Adds Tagline for title as long as its not empty
 add_action( 'genesis_before_entry_content', 'cores_tagline_output');
 function cores_tagline_output() {
 	
-	if(the_meta()){
-		echo the_meta();
-	}
+	// Retrieves the stored value from the database
+    $meta_value = get_post_meta( get_the_ID(), 'meta-text', true );
+ 
+    // Checks and displays the retrieved value
+    if( !empty( $meta_value ) ) {
+        echo $meta_value;
+    }
+ 
 }
+
+//* Remove the site footer
+ remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
+ remove_action( 'genesis_footer', 'genesis_do_footer' );
+ remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
+//* Customize the site footer
+add_action( 'genesis_footer', 'corecom_custom_footer' );
+function corecom_custom_footer() { ?>
+	<div class="site-footer">
+			<div class="wrap">
+				<div id="left-footer" class="one-half first"><img src="<?php echo get_stylesheet_directory_uri();?>/images/logo-white.png" id="footer-logo" class=""></div>
+				<div id="right-footer" class="one-half">
+					<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'container_class' => 'genesis-nav-menu' ) );?>
+					<p>8570 Criterion Drive, Ste 148 Colorado Springs, Co | 719.822.1880 <br />Copyright &copy; <?php date('Y'); ?> Core Commerical Brokerage <a href="#">Privacy Policy</a></p>
+				</div>
+				<div class="clearfix"></div>				
+			</div>
+	</div>
+
+<?php
+}
+
+function wpb_footer_creds_text () {
+	$copyright = '';
+        return $copyright;
+}
+add_filter( 'genesis_footer_creds_text', 'wpb_footer_creds_text' );
+
