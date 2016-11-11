@@ -385,12 +385,31 @@ div.contact-slider section.widget:nth-child(2) {
   height: 350px !important;
 }
 
+aside.home-middle-01.clearfix li {
+  height: 250px !important;
+  top: 30px !important;
+}
+
+aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li {
+  width: 500px;
+}
 aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li img {
   width: 200px !important;
   height: 200px !important;
 }
 aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-caption {
   display: block;
+}
+aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-caption p {
+  width: 500px;
+  font-size: 2em;
+  font-style: italic;
+}
+aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-caption p:before {
+  content: '"';
+}
+aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-caption p:after {
+  content: '"';
 }
 
 aside.home-middle-01.clearfix .soliloquy-caption {
@@ -416,6 +435,11 @@ section.widget {
 
 .soliloquy-viewport {
   height: 300px !important;
+}
+
+.soliloquy-container .soliloquy-caption.soliloquy-caption-top {
+  left: -145px !important;
+  top: -30px !important;
 }
 
 /* Headings */
