@@ -235,7 +235,7 @@ function cores_header_sliders() {
 	}
 }
 //Adds Tagline for title as long as its not empty
-add_action( 'genesis_before_entry_content', 'cores_tagline_output');
+add_action( 'genesis_entry_content', 'cores_tagline_output',1);
 function cores_tagline_output() {
 	
 	// Retrieves the stored value from the database
@@ -244,7 +244,6 @@ function cores_tagline_output() {
     // Checks and displays the retrieved value
     if( !empty( $meta_value ) ) {
         echo '<div id="the-tagline">'.$meta_value.'</div>';
-		//echo the_meta();//this gets all the meta in an <ul>
     }
  
 }

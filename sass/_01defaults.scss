@@ -23,13 +23,13 @@
 
 /* Clearfix */
 .site-inner:after,
-.home-middle:after,
+//.home-middle:after,
 .site-header:after,
 .nav-primary:after,
 .nav-secondary:after,
 .wrap:after,
 .footer-widgets:after,
-.clearfix:after
+.clearfix:after,.soliloquy-container
 {
   content: " ";
   display: table;

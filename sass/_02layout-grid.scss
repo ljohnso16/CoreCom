@@ -201,7 +201,7 @@
 	    max-width: 1150px;
 	    margin: auto;
 	}
-	aside.home-middle-01.clearfix{
+	aside.home-middle-01.clearfix,{
 		background-image:url('images/core-globe.png');
     	background-repeat: no-repeat;
     	background-position: right; 
@@ -212,4 +212,46 @@
 	div.contact-slider section.widget:nth-child(2) {
     margin: 35px 0px;
 }
-  	
+
+.testimonials div.site-container div.wrap div.content-sidebar-wrap main.content article.page.type-page{//just add testimonial to the body class in genesis per page settings to have the content background take on globe
+		background-image:url('images/testimonial-core-globe.png');
+    	background-repeat: no-repeat;
+    	background-position: right; 
+	}
+.testimonials aside.home-middle-01.clearfix .soliloquy-pager.soliloquy-default-pager{
+	display: none;
+}
+.testimonials aside.home-middle-01.clearfix {
+    background: none;
+    height: 350px !important;//size of tht entire widget area
+}
+aside.home-middle-01.clearfix li.soliloquy-active-slide + li+li{
+	img{
+		width:200px !important;
+		height: 200px !important;
+	}
+	.soliloquy-caption{
+		display: block;
+	}
+}
+aside.home-middle-01.clearfix {
+	.soliloquy-caption{
+		display: none;
+	}
+}
+aside.home-middle-01.clearfix .soliloquy-caption p{
+	color:$corecom-blue;
+}
+aside.home-middle-01.clearfix .soliloquy-caption-inside {
+	background-color:transparent !important;
+}
+.testimonials aside.home-middle-01.clearfix 
+a.soliloquy-link {
+    top: 60px;
+}
+section.widget,{
+	height:100%;
+}
+.soliloquy-viewport {
+    height: 300px !important;
+}

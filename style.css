@@ -75,13 +75,12 @@ nav, output, ruby, section, summary, time, mark, audio, video {
 
 /* Clearfix */
 .site-inner:after,
-.home-middle:after,
 .site-header:after,
 .nav-primary:after,
 .nav-secondary:after,
 .wrap:after,
 .footer-widgets:after,
-.clearfix:after {
+.clearfix:after, .soliloquy-container {
   content: " ";
   display: table;
   clear: both;
@@ -369,6 +368,54 @@ section.widget div.widget-wrap div.widget div.content article div p {
 
 div.contact-slider section.widget:nth-child(2) {
   margin: 35px 0px;
+}
+
+.testimonials div.site-container div.wrap div.content-sidebar-wrap main.content article.page.type-page {
+  background-image: url("images/testimonial-core-globe.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.testimonials aside.home-middle-01.clearfix .soliloquy-pager.soliloquy-default-pager {
+  display: none;
+}
+
+.testimonials aside.home-middle-01.clearfix {
+  background: none;
+  height: 350px !important;
+}
+
+aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li img {
+  width: 200px !important;
+  height: 200px !important;
+}
+aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-caption {
+  display: block;
+}
+
+aside.home-middle-01.clearfix .soliloquy-caption {
+  display: none;
+}
+
+aside.home-middle-01.clearfix .soliloquy-caption p {
+  color: #39719a;
+}
+
+aside.home-middle-01.clearfix .soliloquy-caption-inside {
+  background-color: transparent !important;
+}
+
+.testimonials aside.home-middle-01.clearfix
+a.soliloquy-link {
+  top: 60px;
+}
+
+section.widget {
+  height: 100%;
+}
+
+.soliloquy-viewport {
+  height: 300px !important;
 }
 
 /* Headings */
