@@ -224,6 +224,7 @@
 .testimonials aside.home-middle-01.clearfix {
     background: none;
     height: 350px !important;//size of tht entire widget area
+    margin-bottom:30px;
 }
 aside.home-middle-01.clearfix li{
 	height:250px !important;
@@ -239,7 +240,7 @@ aside.home-middle-01.clearfix li.soliloquy-active-slide + li+li{
 		display: block;
 		p{
 			width:500px;
-			font-size:2em;
+			font-size:1.8em;
 			font-style:italic;
 		}
 		p:before{

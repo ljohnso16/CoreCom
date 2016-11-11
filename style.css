@@ -383,6 +383,7 @@ div.contact-slider section.widget:nth-child(2) {
 .testimonials aside.home-middle-01.clearfix {
   background: none;
   height: 350px !important;
+  margin-bottom: 30px;
 }
 
 aside.home-middle-01.clearfix li {
@@ -402,7 +403,7 @@ aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-cap
 }
 aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-caption p {
   width: 500px;
-  font-size: 2em;
+  font-size: 1.8em;
   font-style: italic;
 }
 aside.home-middle-01.clearfix li.soliloquy-active-slide + li + li .soliloquy-caption p:before {
