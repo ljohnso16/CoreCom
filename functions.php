@@ -53,6 +53,7 @@ function gs_theme_setup() {
 	
 	//Custom Image Sizes
 	add_image_size( 'featured-image', 225, 160, 480, TRUE );
+	add_image_size( 'team-member-image', 137, 188, FALSE );
 
 	// Enable Custom Header
 	add_theme_support( 'genesis-custom-header', array(
@@ -191,7 +192,7 @@ function cores_blank_tagline_output() {
  
 }
 function before_output() {
-	echo '<aside  class="about-middle-01 clearfix"><div id="about-middle-01"><section id="widget-wrangler-sidebar-6" class="widget ww_widget-contact-us-header ww_widget-60"><div class="widget-wrap"><h4 class="widget-title widgettitle">About Core Commercial Brokerage</h4></div></section><div id="about-middle-001" class="about-middle-01 widget-area">';
+	echo '<div class="globe-bk clearfix"><aside  class="about-middle-01 clearfix"><div id="about-middle-01"><section id="widget-wrangler-sidebar-6" class="widget ww_widget-contact-us-header ww_widget-60"><div class="widget-wrap"><h4 class="widget-title widgettitle">About Core Commercial Brokerage</h4></div></section><div id="about-middle-001" class="about-middle-01 widget-area">';
 }
 function after_output() {
 	echo '</div></div></aside>';
@@ -252,8 +253,8 @@ function widget_bottom() {
   		genesis_widget_area( 
           	 'team-members',////////////Team-members
             	    array(
-                        'before' => '<aside  class="team-members clearfix"><div id="team-members"><div class="team-members widget-area">', 
-                        'after' => '</div></div></aside>',
+                        'before' => '<aside  class="team-members clearfix"><div id="team-members"><div class="team-members widget-area clearfix">', 
+                        'after' => '</div></div></aside></div>',
                 ) 
         );
   		genesis_widget_area( 

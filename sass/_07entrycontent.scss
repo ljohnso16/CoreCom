@@ -1,4 +1,8 @@
-ul.post-meta,div#the-tagline {
+div#about-middle-001:after {
+    width: 95% !important;
+    margin: auto !important;
+}
+ul.post-meta,div#the-tagline,div#about-middle-001 {
 	list-style-type: none;
 	text-align:center;
 	display: table;
@@ -16,7 +20,8 @@ ul.post-meta,div#the-tagline {
 		}
 	}
 }
-ul.post-meta:after,div#the-tagline:after {
+
+ul.post-meta:after,div#the-tagline:after,div#about-middle-001:after {
   content:''; 
   width:50%;
   border-bottom: 3px solid $corecom-blue;
@@ -96,6 +101,17 @@ ul.post-meta:after,div#the-tagline:after {
 		margin: 30px auto 0px;
 		color:$color-extra
 	}
+	div#team-members{
+
+		div.textwidget{
+			font-style: italic;
+    		opacity: 0.5;
+		}
+		h4.widget-title.widgettitle{
+			margin-bottom: 0px !important;
+			margin-top: 0px !important;
+		}
+	}
 div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textwidget {
     margin-bottom: 30px;
     font-style: italic;
@@ -106,7 +122,7 @@ div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textw
 		margin-left: 0;
 	}
 	//stolen from the col classes in Genesis, 
-	div.widget-wrap article.entry {
+	.home-middle-01 .clearfix div.widget-wrap article.entry, div#about-featured div.widget-wrap article.entry {
 		width: 31.623931623931625%;
     	float:left;
     	margin-left: 2.564102564102564%;
@@ -120,6 +136,13 @@ div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textw
 	    clear: both;
 	    height: 0;
     }	
+	#team-members p.entry-meta{
+		text-align: center;
+	}
+	#team-members img.entry-image.attachment-team-member{
+		display: block;
+		margin:auto !important;
+	}    
 	//Makes More Link apear on its own link
 	a.more-link{
 		display: block;
@@ -313,3 +336,13 @@ div.testimonial-slider {
 	}
 }
 
+aside.about-featured.clearfix{
+	background-color:#e8ecef;
+
+}
+#team-members{ 
+	a.aligncenter,h2.entry-title {
+	    margin-bottom: 0px !important;
+	    font-size:1em;
+	}
+}

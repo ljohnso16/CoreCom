@@ -243,7 +243,7 @@ a img {
 }
 
 .one-fourth {
-  width: 21.875%;
+  width: 24.82639%;
   /* 252px / 1152px */
 }
 
@@ -285,6 +285,7 @@ a img {
   /* 952px / 1152px */
 }
 
+div#about-featured div.widget-wrap article.entry:first-of-type,
 .first, div.contact-slider section.widget:nth-child(2),
 .content-sidebar-sidebar .content,
 .sidebar-content-sidebar .sidebar-secondary,
@@ -318,11 +319,7 @@ main.content {
   margin: 0;
 }
 
-header.entry-header p.entry-meta {
-  display: none;
-}
-
-aside.home-top, main.content article.entry {
+aside.home-top, main.content article.entry, aside.our-clients-slider.clearfix {
   background-color: #e8ecef;
 }
 
@@ -351,12 +348,12 @@ footer.entry-footer p.entry-meta {
   display: none;
 }
 
-aside#home-middle-01, section.widget, div#home-middle-01, slider.clearfix, aside.contact-slider.clearfix {
+aside#home-middle-01, section.widget, div#home-middle-01, slider.clearfix, aside.contact-slider.clearfix, aside.about-middle-01.clearfix, aside.team-members.clearfix {
   max-width: 1150px;
   margin: auto;
 }
 
-aside.home-middle-01.clearfix {
+aside.home-middle-01.clearfix, .globe-bk {
   background-image: url("images/core-globe.png");
   background-repeat: no-repeat;
   background-position: right;
@@ -963,7 +960,12 @@ nav#mobile-nav {
 /*
 06 Post Content Styles
 ---------------------------------------------------------------------------------------------------- */
-ul.post-meta, div#the-tagline {
+div#about-middle-001:after {
+  width: 95% !important;
+  margin: auto !important;
+}
+
+ul.post-meta, div#the-tagline, div#about-middle-001 {
   list-style-type: none;
   text-align: center;
   display: table;
@@ -972,17 +974,17 @@ ul.post-meta, div#the-tagline {
   padding-bottom: 20px;
   min-width: 320px;
 }
-ul.post-meta li:not(:first-child), div#the-tagline li:not(:first-child) {
+ul.post-meta li:not(:first-child), div#the-tagline li:not(:first-child), div#about-middle-001 li:not(:first-child) {
   display: none;
 }
-ul.post-meta li, div#the-tagline li {
+ul.post-meta li, div#the-tagline li, div#about-middle-001 li {
   font-size: 1.2em;
 }
-ul.post-meta li span.post-meta-key, div#the-tagline li span.post-meta-key {
+ul.post-meta li span.post-meta-key, div#the-tagline li span.post-meta-key, div#about-middle-001 li span.post-meta-key {
   display: none;
 }
 
-ul.post-meta:after, div#the-tagline:after {
+ul.post-meta:after, div#the-tagline:after, div#about-middle-001:after {
   content: '';
   width: 50%;
   border-bottom: 3px solid #39719a;
@@ -1068,6 +1070,15 @@ h4.widget-title.widgettitle, #contact-slider p.title {
   color: #4b7da2;
 }
 
+div#team-members div.textwidget {
+  font-style: italic;
+  opacity: 0.5;
+}
+div#team-members h4.widget-title.widgettitle {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+
 div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textwidget {
   margin-bottom: 30px;
   font-style: italic;
@@ -1079,7 +1090,7 @@ div#home-middle-01 section.widget .widget-wrap article:first-of-type {
   margin-left: 0;
 }
 
-div.widget-wrap article.entry {
+.home-middle-01 .clearfix div.widget-wrap article.entry, div#about-featured div.widget-wrap article.entry {
   width: 31.623931623931625%;
   float: left;
   margin-left: 2.564102564102564%;
@@ -1093,6 +1104,15 @@ div.widget-wrap article:after {
   font-size: 0;
   clear: both;
   height: 0;
+}
+
+#team-members p.entry-meta {
+  text-align: center;
+}
+
+#team-members img.entry-image.attachment-team-member {
+  display: block;
+  margin: auto !important;
 }
 
 a.more-link {
@@ -1285,6 +1305,15 @@ div.testimonial-slider ul.soliloquy-slider li.soliloquy-item.soliloquy-image-sli
   min-height: 223px;
 }
 
+aside.about-featured.clearfix {
+  background-color: #e8ecef;
+}
+
+#team-members a.aligncenter, #team-members h2.entry-title {
+  margin-bottom: 0px !important;
+  font-size: 1em;
+}
+
 /*
 07 Sidebar
 ---------------------------------------------------------------------------------------------------- */
@@ -1449,7 +1478,7 @@ input:hover[type="submit"],
 /*
 11 Images and Captions
 ---------------------------------------------------------------------------------------------------- */
-embed,
+firstembed,
 img,
 object,
 video {

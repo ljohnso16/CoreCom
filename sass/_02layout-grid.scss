@@ -97,7 +97,7 @@
 	}
 
 	.one-fourth {
-		width: percentage(252px / 1152px); /* 252px / 1152px */
+		width: percentage(286px / 1152px); /* 252px / 1152px */ //had to change it. this nuber shud come closer to %25
 	}
 
 	.three-fourths {
@@ -131,6 +131,7 @@
 		width: percentage(952px / 1152px); /* 952px / 1152px */
 	}
 
+	div#about-featured div.widget-wrap article.entry:first-of-type,
 	.first,div.contact-slider section.widget:nth-child(2), 
 	.content-sidebar-sidebar .content,
 	.sidebar-content-sidebar .sidebar-secondary,
@@ -168,11 +169,11 @@
 	.page .entry {
 		margin: 0;
 	}
-	header.entry-header p.entry-meta {
-    	display: none;
-	}
+	// header.entry-header p.entry-meta {
+ //    	display: none;
+	// }
 
-	aside.home-top,main.content article.entry {
+	aside.home-top,main.content article.entry,aside.our-clients-slider.clearfix {
 		background-color: #e8ecef;
 	}
 	.entry-content {
@@ -197,11 +198,11 @@
 	footer.entry-footer p.entry-meta {
     	display: none;
 	}
-	aside#home-middle-01,section.widget,div#home-middle-01,slider.clearfix,aside.contact-slider.clearfix {
+	aside#home-middle-01,section.widget,div#home-middle-01,slider.clearfix,aside.contact-slider.clearfix,aside.about-middle-01.clearfix,aside.team-members.clearfix {
 	    max-width: 1150px;
 	    margin: auto;
 	}
-	aside.home-middle-01.clearfix,{
+	aside.home-middle-01.clearfix,.globe-bk{
 		background-image:url('images/core-globe.png');
     	background-repeat: no-repeat;
     	background-position: right; 
