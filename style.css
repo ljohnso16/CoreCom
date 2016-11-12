@@ -1110,6 +1110,31 @@ div.widget-wrap article:after {
   text-align: center;
 }
 
+#team-members article a:first-of-type {
+  height: 188px;
+}
+
+.bio-text {
+  height: 188px;
+  width: 137px;
+  margin: auto;
+  top: -188px;
+  position: relative;
+  background-color: #39719a;
+  opacity: .5;
+}
+.bio-text span {
+  padding-left: 36px;
+  position: relative;
+  top: 64px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#team-members a.aligncenter span.bio-text {
+  left: 40%;
+}
+
 #team-members img.entry-image.attachment-team-member {
   display: block;
   margin: auto !important;
