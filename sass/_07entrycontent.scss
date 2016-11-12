@@ -5,6 +5,7 @@ ul.post-meta,div#the-tagline {
 	margin-left:auto;
 	margin-right:auto;
 	padding-bottom:20px;
+	min-width: 320px;
 	li:not(:first-child){
 		display: none;
 	}
@@ -300,7 +301,7 @@ div.testimonial-slider {
 	.soliloquy-container .soliloquy-caption p, h1#caption-title{
 		color:#fff;
     	position: relative;
-    	top: -2em;
+    	top: -3em;
 
 	}
 	h2.soliloquy-fc-title{

@@ -430,15 +430,15 @@ a.soliloquy-link {
   top: 60px;
 }
 
-section.widget {
+.testimonials aside.home-middle-01.clearfix section.widget {
   height: 100%;
 }
 
-.soliloquy-viewport {
+.testimonials aside.home-middle-01.clearfix .soliloquy-viewport {
   height: 300px !important;
 }
 
-.soliloquy-container .soliloquy-caption.soliloquy-caption-top {
+.testimonials aside.home-middle-01.clearfix .soliloquy-container .soliloquy-caption.soliloquy-caption-top {
   left: -145px !important;
   top: -30px !important;
 }
@@ -970,6 +970,7 @@ ul.post-meta, div#the-tagline {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
+  min-width: 320px;
 }
 ul.post-meta li:not(:first-child), div#the-tagline li:not(:first-child) {
   display: none;
@@ -1274,7 +1275,7 @@ div.testimonial-slider li.soliloquy-item {
 div.testimonial-slider .soliloquy-container .soliloquy-caption p, div.testimonial-slider h1#caption-title {
   color: #fff;
   position: relative;
-  top: -2em;
+  top: -3em;
 }
 div.testimonial-slider h2.soliloquy-fc-title {
   margin: 0px !important;
@@ -1587,4 +1588,16 @@ div.gform_wrapper li,
 div.gform_wrapper form li {
   margin: 16px 0 0;
   margin: 1.6rem 0 0;
+}
+
+/* Smartphones (portrait and landscape) ———– */
+@media only screen and (min-device-width: 170px) and (max-device-width: 480px) {
+  /* Styles */
+  div.testimonial-slider .soliloquy-container .soliloquy-caption p {
+    font-size: 1em;
+  }
+
+  div.testimonial-slider h2.soliloquy-fc-title {
+    font-size: 0.5em;
+  }
 }

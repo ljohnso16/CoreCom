@@ -112,7 +112,7 @@ function gs_register_sidebars() {
 		array(
 			'id'			=> 'home-middle-01',
 			'name'			=> __( 'Home Middle', 'corecom' ),
-			'description'	=> __( 'This is the middle homepage area. We will be putting the featured Posts widget for 3 posts with featured image', 'corecom' ),
+			'description'	=> __( 'This is the middle area. We will be putting the featured Posts, about content, ', 'corecom' ),
 		),
 		array(
 			'id'			=> 'testimonials',
@@ -134,13 +134,28 @@ function gs_register_sidebars() {
 			'name'			=> __( 'Footer Right', 'corecom' ),
 			'description'	=> __( 'Last Footer on the right, 2nd Menu, then address, ', 'corecom' ),
 		),
+		array(
+			'id'			=> 'our-clients',
+			'name'			=> __( 'Our Clients', 'corecom' ),
+			'description'	=> __( 'Last Footer on the right, 2nd Menu, then address, ', 'corecom' ),
+		),		
+		array(
+			'id'			=> 'about-featured',
+			'name'			=> __( 'About Page Featured Content', 'corecom' ),
+			'description'	=> __( 'Area Under the Title on About Page, ', 'corecom' ),
+		),
+		array(
+			'id'			=> 'team-members',
+			'name'			=> __( 'Team Members About Page', 'corecom' ),
+			'description'	=> __( 'Area Under the About Page , ', 'corecom' ),
+		),		
 	);
 	
 	foreach ( $sidebars as $sidebar )
 		genesis_register_sidebar( $sidebar );
 }
 
-/**
+/** 
  * Enqueue and Register Scripts - Twitter Bootstrap, Font-Awesome, and Common.
  */
 require_once('lib/scripts.php');
@@ -164,10 +179,43 @@ function gs_mobile_navigation() {
 
 
 }
+function cores_blank_tagline_output() {
+	
+	// Retrieves the stored value from the database
+    $meta_value = get_post_meta( get_the_ID(), 'tagline-text', true );//targets our meta based on key
+ 
+    // Checks and displays the retrieved value
+    if( empty( $meta_value ) ) {
+        echo '<div id="the-tagline">&nbsp;</div>';
+    }
+ 
+}
+function before_output() {
+	echo '<aside  class="about-middle-01 clearfix"><div id="about-middle-01"><section id="widget-wrangler-sidebar-6" class="widget ww_widget-contact-us-header ww_widget-60"><div class="widget-wrap"><h4 class="widget-title widgettitle">About Core Commercial Brokerage</h4></div></section><div id="about-middle-001" class="about-middle-01 widget-area">';
+}
+function after_output() {
+	echo '</div></div></aside>';
+}
+//Adds slider to all pages using slug
+add_action( 'genesis_before_content', 'cores_header_sliders' );
+function cores_header_sliders() {
+	if ( function_exists( 'soliloquy' ) ) { 
+			soliloquy( 'home', 'slug' );
+		}
+}
+function widget_about_featured() {
+genesis_widget_area( 
+                'about-featured',//Featured Content on About
+                array(
+                        'before' => '<aside class="about-featured clearfix"><div id="about-featured"><div class="about-featured widget-area">', 
+                        'after' => '</div></div></aside>',
+                ) 
+        );
+}
 
-// Add Widget Area After Post, and homem page
-add_action('genesis_after_content', 'gs_do_after_entry');
-function gs_do_after_entry() {
+// Add Widget Area
+add_action('genesis_after_content', 'widget_top',1);
+function widget_top() {
 
   		genesis_widget_area( 
                 'home-top-1',//Icon Space 1 
@@ -178,7 +226,7 @@ function gs_do_after_entry() {
         );
   		genesis_widget_area( 
                 'home-top-2',//Icon Space 2
-                array(
+                array(	
                         'before' => '<div class="one-third home-widget widget-area">', 
                         'after' => '</div>',
                 ) 
@@ -190,7 +238,6 @@ function gs_do_after_entry() {
                         'after' => '</div><div class="clearfix"></div></div></aside>',
                 ) 
         );
-
   		genesis_widget_area( 
                 'home-middle-01',////////////featured posts
                 array(
@@ -198,6 +245,24 @@ function gs_do_after_entry() {
                         'after' => '</div></div></aside>',
                 ) 
         );
+}
+// Add Widget Area After Post, and homem page
+add_action('genesis_after_content', 'widget_bottom',8);
+function widget_bottom() {
+  		genesis_widget_area( 
+          	 'team-members',////////////Team-members
+            	    array(
+                        'before' => '<aside  class="team-members clearfix"><div id="team-members"><div class="team-members widget-area">', 
+                        'after' => '</div></div></aside>',
+                ) 
+        );
+  		genesis_widget_area( 
+                'our-clients',////////////our-clients
+                array(
+                        'before' => '<aside  class="our-clients-slider clearfix"><div id="our-clients-slider"><div class="our-clients-slider widget-area">', 
+                        'after' => '</div></div></aside>',
+                ) 
+        );     
   		genesis_widget_area( 
                 'testimonials',////////////testimonials
                 array(
@@ -206,7 +271,7 @@ function gs_do_after_entry() {
                 ) 
         );
   		genesis_widget_area( 
-                'contact',////////////testimonials
+                'contact',////////////mapt anc contact area 
                 array(
                         'before' => '<aside  class="contact-slider clearfix"><div id="contact-slider"><div class="contact-slider widget-area">', 
                         'after' => '</div></div></aside>',
@@ -216,24 +281,6 @@ function gs_do_after_entry() {
 
  }
 
-//Adds slider to all pages using slug
-add_action( 'genesis_before_content', 'cores_header_sliders' );
-function cores_header_sliders() {
-	if ( function_exists( 'soliloquy' ) ) { 
-		soliloquy( 'home', 'slug' );
-	// 	echo '
-	// <div class="soliloquy-contact-caption-wrap">
- //    	<div id="contact-caption-head">
-	//     	<h1 class="soliloquy-ccb-caption">Core Commercial Brokerage</h1>
-	//     	<p>For all your commercial real estate</p>
-	//     </div>
- //    	<div id="contact-caption-btn">
- //    		<a class="soliloquy-button" href="'.site_url('/contact/').'" title="Contact us Today">Contact Us Today</a>
- //    	</div>
-	// </div><div class="clearfix"></div>
-	// '; 
-	}
-}
 //Adds Tagline for title as long as its not empty
 add_action( 'genesis_entry_content', 'cores_tagline_output',1);
 function cores_tagline_output() {
@@ -244,10 +291,8 @@ function cores_tagline_output() {
     // Checks and displays the retrieved value
     if( !empty( $meta_value ) ) {
         echo '<div id="the-tagline">'.$meta_value.'</div>';
-    }
- 
+    } 
 }
-
 //* Remove the site footer
  remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
  remove_action( 'genesis_footer', 'genesis_do_footer' );

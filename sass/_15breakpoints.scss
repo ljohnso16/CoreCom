@@ -1,0 +1,12 @@
+/* Smartphones (portrait and landscape) ———– */
+@media only screen
+and (min-device-width : 170px)
+and (max-device-width : 480px) {
+/* Styles */
+	div.testimonial-slider .soliloquy-container .soliloquy-caption p{
+		font-size:1em;		
+	}
+	div.testimonial-slider h2.soliloquy-fc-title{
+		font-size:0.5em;
+	}
+}
