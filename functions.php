@@ -260,8 +260,8 @@ function widget_bottom() {
   		genesis_widget_area( 
                 'our-clients',////////////our-clients
                 array(
-                        'before' => '<aside  class="our-clients-slider clearfix"><div id="our-clients-slider"><div class="our-clients-slider widget-area">', 
-                        'after' => '</div></div></aside>',
+                        'before' => '<aside  class="clients-slider clearfix">', 
+                        'after' => '</aside>',
                 ) 
         );     
   		genesis_widget_area( 
@@ -320,4 +320,18 @@ function wpb_footer_creds_text () {
         return $copyright;
 }
 add_filter( 'genesis_footer_creds_text', 'wpb_footer_creds_text' );
+
+/*********************************
+HTML slide for About Page Client Slides
+	<div class="first-override one-half-override client-logo">
+    	<img src="http://corecommercial.staging.wpengine.com/wp-content/uploads/Aeroflex.png">
+	</div>
+	<div class="one-half-override client-right">
+		<h4 class="client-title">Aeroflex Colorado Springs</h4>
+        <p class="client-description">Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat.</p>
+    </div>
+*********************************/
+
+
+
 

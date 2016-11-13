@@ -117,12 +117,8 @@ div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textw
     font-style: italic;
     opacity: 0.5;
 }
-	div#home-middle-01 section.widget .widget-wrap article:first-of-type{
-		clear: both;
-		margin-left: 0;
-	}
 	//stolen from the col classes in Genesis, 
-	.home-middle-01 .clearfix div.widget-wrap article.entry, div#about-featured div.widget-wrap article.entry {
+	div#about-featured div.widget-wrap article.entry {
 		width: 31.623931623931625%;
     	float:left;
     	margin-left: 2.564102564102564%;

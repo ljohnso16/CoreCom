@@ -1,6 +1,4 @@
 jQuery(function($) {
-    
-
 	$('#team-members a.aligncenter').hover(
 		
 	function() {
