@@ -17,6 +17,8 @@ require_once( get_stylesheet_directory() . '/lib/init.php');
 //Plugin that enables the Metafield for Tagline
 require_once( get_stylesheet_directory() . '/lib/plugins/corecomtagline.php');
 
+
+
 add_action( 'wp_enqueue_scripts', 'corecom_add_scripts' );
 function corecom_add_scripts() {
 
@@ -54,6 +56,7 @@ function gs_theme_setup() {
 	//Custom Image Sizes
 	add_image_size( 'featured-image', 225, 160, 480, TRUE );
 	add_image_size( 'team-member-image', 137, 188, FALSE );
+	add_image_size( 'Listing Image', 170, 90, true );	
 
 	// Enable Custom Header
 	add_theme_support( 'genesis-custom-header', array(
@@ -281,7 +284,6 @@ function widget_bottom() {
                               
 
  }
-
 //Adds Tagline for title as long as its not empty
 add_action( 'genesis_entry_content', 'cores_tagline_output',1);
 function cores_tagline_output() {

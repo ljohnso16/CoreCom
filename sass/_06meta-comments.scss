@@ -10,13 +10,16 @@
 
 	.entry-header .entry-meta {
 		@include rem(margin-bottom, 24px);
+		text-align: center;
 	}
 
 	.entry-footer .entry-meta {
 		border-top: 1px solid #ccc;
 		@include rem(padding-top, 24px);
 	}
-
+.entry-header .entry-meta{
+	color:$textColor;
+}
 	.entry-meta .entry-comments {
 		background: url(images/post-comments.png) no-repeat center left;		
 		@include rem(margin-left, 16px);
