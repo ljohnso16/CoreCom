@@ -1,7 +1,14 @@
 <?
-
+/* Plugin Name: Custom Meta Shortcodes
+Plugin URI: N/A
+Description:Returns what ever custom field you ask for, works for all post types with any custom field
+Version: 1.0
+Author: Lloyd Johnson
+Author URI: github.com/ljohnso16
+*/ 
 /**
- * Returns what ever custom field you ask for, works for all post types with any custom field
+
+ 
  * Usage [corecom id="tagline-text"], or Square Footage etc"
  */
 function corecom_custom_shorcodes( $atts ) {
