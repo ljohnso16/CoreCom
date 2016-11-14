@@ -191,12 +191,15 @@ div.col-right{
 	aside.home-top,main.content article.entry,aside.our-clients-slider.clearfix {
 		background-color: #e8ecef;
 	}
-	.entry-content {
+	.entry-content,#listings-area {
 	    overflow: hidden;
 	    max-width: 875px;
 	    text-align: center;
 	    margin: 0 auto;
 	}
+.listings h2.entry-title{
+	line-height:0px !important;
+}	
 	.textwidget {
 	    text-align: center;
 	    margin: auto 0;

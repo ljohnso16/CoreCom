@@ -9,11 +9,12 @@ Author URI: github.com/ljohnso16
 /**
 
  
- * Usage [corecom id="tagline-text"], or Square Footage etc"
+ * Usage [custommeta id="tagline-text" label="Tagline: "], or Square Footage etc"
  */
-function corecom_custom_shorcodes( $atts ) {
+function custom_meta_shorcodes( $atts ) {
 	$atts = extract( shortcode_atts( array(
 		'id' => $id,
+		'label'=>$label
 	), $atts ) );
 	if ( ! $id ){
 		 return;//if ID is blank stop
@@ -23,10 +24,10 @@ function corecom_custom_shorcodes( $atts ) {
 	}
 	$data = get_post_meta( get_the_ID(), $id, true );
 	if ( $data ) {
-		return '<span class="corecom-custom-field id-'. $id .'">'. $data .'</span>';
+		return '<span class="corecom-custom-field id-'. $id .'">'.$label.' '. $data .'</span>';
 	}
 	else{
 		return;
 	}
 }
-add_shortcode( 'corecom', 'corecom_custom_shorcodes' );
+add_shortcode( 'custommeta', 'custom_meta_shorcodes' );

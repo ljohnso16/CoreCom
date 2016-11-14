@@ -341,11 +341,15 @@ aside.home-top, main.content article.entry, aside.our-clients-slider.clearfix {
   background-color: #e8ecef;
 }
 
-.entry-content {
+.entry-content, #listings-area {
   overflow: hidden;
   max-width: 875px;
   text-align: center;
   margin: 0 auto;
+}
+
+.listings h2.entry-title {
+  line-height: 0px !important;
 }
 
 .textwidget {
@@ -897,6 +901,7 @@ nav#mobile-nav {
 
 .entry-time {
   color: #5d5d5e;
+  display: none;
 }
 
 /* Comments */
@@ -1089,13 +1094,53 @@ h4.widget-title.widgettitle, #contact-slider p.title {
   color: #4b7da2;
 }
 
-div#team-members div.textwidget {
+div#team-members div.textwidget, #listings-area div.textwidget {
   font-style: italic;
   opacity: 0.5;
+  padding-bottom: 3em;
 }
-div#team-members h4.widget-title.widgettitle {
+div#team-members h4.widget-title.widgettitle, #listings-area h4.widget-title.widgettitle {
   margin-bottom: 0px !important;
   margin-top: 0px !important;
+}
+
+.single-listing-info h4.widget-title.widgettitle, .entry-content.single-listing-info div {
+  text-align: left;
+}
+
+.sale-price-area h4.widget-title.widgettitle, .one-half.sale-price-area, .first.one-half.rental-rate-area h4 {
+  display: inline-block;
+}
+
+.entry-time {
+  display: none;
+}
+
+#listings-area article {
+  margin-bottom: 15px;
+  font-size: smaller;
+}
+
+aside.listings.clearfix p span {
+  font-style: italic;
+  font-size: 0.9em;
+  font-color: #a8b6bf !important;
+  opacity: 0.7;
+}
+
+#listings-area span.entry-terms {
+  margin-bottom: 10px;
+}
+
+#listings-area article a.alignleft {
+  margin-right: 15px;
+}
+
+#team-members span.entry-terms {
+  font-style: italic;
+  font-size: 0.9em;
+  font-color: #a8b6bf !important;
+  opacity: 0.8;
 }
 
 div#home-middle-001 section.widget div.widget-wrap div.widget div.content .textwidget {
@@ -1351,6 +1396,19 @@ aside.about-featured.clearfix {
 #team-members a.aligncenter, #team-members h2.entry-title {
   margin-bottom: 0px !important;
   font-size: 1em;
+}
+
+aside.listings.clearfix h2.entry-title, aside.listings.clearfix p {
+  text-align: left !important;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+aside.listings.clearfix p {
+  clear: none;
+}
+aside.listings.clearfix p span {
+  display: block;
 }
 
 /*
